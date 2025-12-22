@@ -96,10 +96,10 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
     if (!validatedFields.success) {
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to Create Invoice.',
+            message: 'Missing Fields. Failed to Update Invoice.',
             values: {
                 customerId: formData.get('customerId')?.toString() || '',
-                amount: 'error',
+                amount: formData.get('amount')?.toString() || '',
                 status: formData.get('status')?.toString() || '',
             }
         };
