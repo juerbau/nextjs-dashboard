@@ -18,8 +18,6 @@ export default function Form({customers}: { customers: CustomerField[] }) {
     const initialState: State = {message: null, errors: {}, values: {},};
     const [state, formAction] = useActionState(createInvoice, initialState);
 
-    console.log(state.values?.customerId);
-
     return (
         <form action={formAction} aria-describedby="error-message">
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
